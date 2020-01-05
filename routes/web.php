@@ -30,5 +30,7 @@ Route::get('/profile/{user}', 'ProfilesController@index')->name('profile.show');
 
 /* -- POST requests -- */
 
+Route::post('/p', 'PostsController@store');
+
 
 

@@ -72,13 +72,42 @@ table {
 /* Forms */
 
 .form--post {
+	margin: 0 auto;
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
+	width: 500px;
+}
+
+.form--post__item {
+	display: flex;
+	flex-direction: column;
 	width: 100%;
+	margin-bottom: 20px;
+}
+
+.form--post__input {
+	border: solid .3px rgba(255,255,255,.2);
+	box-shadow: 0 3px 10px -3px rgba(0,0,0,.2);
+	padding: 15px 20px;
+	width: 100%;
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	-ms-border-radius: 4px;
+	-o-border-radius: 4px;
 }
 
 .form--post__label {
 	text-transform: capitalize;
+}
+
+.form--post__submit {
+	border: none;
+	padding: 10px 10px;
+	width: 150px;
+	background: #6397ff;
+	color: #fff;
 }
 
 /* Global css */
