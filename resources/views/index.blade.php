@@ -6,20 +6,22 @@
 
 @section('content')
 <div class="home">
+    @auth
     <div class="user">
         <a class="user__section" href="">
             <div class="user__img img-box"><img src="{{ asset('img/default.png') }}" alt="Default img"></div>
             {{ Auth::user()->username }}
         </a>
-        <a class="user__section" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+        <a class="user__section" href="{{ route('logout') }}" onclick="logout()">
             <div class="user__img"></div>
             Logout
         </a>
     </div>
-    <div class="tweets"></div>
+    @endauth
+    <div class="tweets">
+        <div class="tweet">
+            <div></div>
+        </div>
+    </div>
 </div>
-
-<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-    @csrf
-</form>
 @endsection

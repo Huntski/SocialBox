@@ -1,3 +1,18 @@
+/* Modifiers */
+
+.button--active {
+    text-transform: capitalize;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    padding: 10px;
+}
+
+
+/* Global csss */
+
 .home {
     display: flex;
     margin: 0 auto;

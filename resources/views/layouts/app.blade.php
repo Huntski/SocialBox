@@ -34,14 +34,10 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
 
                     </ul>
-
-                    <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -51,6 +47,10 @@
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
+                        @else
+                            <li class="nav-item button--active">
+                                <a class="nav-link" href="{{ route('posts.create') }}">{{ __('Add new post') }}</a>
+                            </li>
                         @endguest
                     </ul>
                 </div>
@@ -64,5 +64,11 @@
     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
         @csrf
     </form>
+    <script type="text/javascript">
+        function logout () {
+            event.preventDefault()
+            document.querySelector('#logout-form').submit()
+        }
+    </script>
 </body>
 </html>
