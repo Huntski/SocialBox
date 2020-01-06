@@ -18,10 +18,12 @@
         </a>
     </div>
     @endauth
-    <div class="tweets">
-        <div class="tweet">
+    <div class="posts">
+        @foreach ($user->posts as $post)
+        <div class="post">
             <div></div>
         </div>
+        @endforeach
     </div>
 </div>
 @endsection

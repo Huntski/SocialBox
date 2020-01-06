@@ -36,9 +36,10 @@ Editing Views:
 
 Tinker (Interact with application):
 	php artisan tinker
-	User::all();
+	User::all(); Show all in table
+	Post::truncate(); Remove all in table
 	Change table values
-		$object->tableField = 'Contents' ( Example: $profile->description = 'Help me lol'; )
+		$object->'tableField' = 'Contents' ( Example: $profile->description = 'Help me lol'; )
 		$object->save();
 
 Database Modal Functions:
@@ -58,3 +59,8 @@ Deleting a Model with its Migration:
 		composer dumpautoload
 		php artisan migrate:refresh
 
+Create public storage link for files:
+	php artisan storage:link
+
+Bringing in library's with composer:
+	composer require `packageName`
