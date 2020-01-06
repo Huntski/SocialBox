@@ -1,0 +1,60 @@
+Install for cmd:
+	Laravel
+	Node.js
+	Composer
+	Vim (Just because cool)
+
+
+Create new Laravel Auth Project:
+	laravel new 'Project name'
+	composer require laravel/ui --dev
+	npm install
+	npm run dev
+	php artisan ui vue --auth
+
+Setup Sqlite Database:
+	vim database/database.sqlite
+		:wq (in database.sqlite file to leave)
+	Edit .env (env = environment)
+		DB_CONNECTION=sqlite
+		Remove all other DB_ lines
+	php artisan migrate
+
+Npm cross-env error:
+	npm install
+	npm run dev
+
+php artisan serve:
+	Localhost server
+
+Editing Views:
+	@extends('layouts.master')
+	asset('file link')
+	@yield('get contents')
+	@section('name')
+		@endsection
+
+Tinker (Interact with application):
+	php artisan tinker
+	User::all();
+	Change table values
+		$object->tableField = 'Contents' ( Example: $profile->description = 'Help me lol'; )
+		$object->save();
+
+Database Modal Functions:
+	$this->hasOne('table field') : Check if $this (User) has only one item in a certain 'table field'
+	$this->hasMany('table field') : Check if $this (User) has more then one item in a certain 'table field'
+	$this->belongsTo('User') : Check if $this (table field) belongs to a certain user
+
+Make new Model:
+	php artisan make:model 'Name' -m 
+		( -m makes a new migration for the model )
+
+Deleting a Model with its Migration:
+	delete the model under \App
+	vendor/composer/autoload_classmap.php (Remove class in this file)
+	
+	If no important data in DB:
+		composer dumpautoload
+		php artisan migrate:refresh
+
