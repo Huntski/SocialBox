@@ -1,4 +1,4 @@
 ### HelpBox
 ##### School project to proof I am working with laravel
 
-*Check notes.txt file for current notes*
+*Check notes__laravel.txt file for current notes*
