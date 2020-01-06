@@ -13,7 +13,7 @@
 
 Auth::routes();
 
-/* -- GET Reqeusts -- */
+/* --- GET Reqeusts --- */
 
 /* - Redirects - */
 Route::get('/home', function(){
@@ -23,12 +23,12 @@ Route::get('/home', function(){
 
 Route::get('/', 'HomeController@index')->name('index');
 
-Route::get('/p', 'PostsController@create')->name('posts.create')->middleware('auth');
+Route::get('/p', 'PostsController@create')->name('posts.create');
 Route::get('/p/{id}', 'PostsController@show')->name('posts.view');
 
 Route::get('/profile/{user}', 'ProfilesController@index')->name('profile.show');
 
-/* -- POST requests -- */
+/* --- POST requests --- */
 
 Route::post('/p', 'PostsController@store');
 

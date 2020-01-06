@@ -3,9 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use \App\Post;
 
 class PostsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function create()
     {
         return view('posts.create');
@@ -17,6 +23,9 @@ class PostsController extends Controller
             'caption' => ['required', 'string', 'max:30'],
             'image' => ['required', 'image'],
         ]);
+
+        auth()->user()->posts()->create($data);
+
         dd(request()->all());
     }
 }
