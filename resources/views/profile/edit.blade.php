@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
 @section('styles')
-<link rel="stylesheet" href="{{ asset('css/create.css') }}">
+    <link rel="stylesheet" href="">
 @endsection
 
 @section('content')
 <div class="container">
-    <form action="/p" method="post" enctype="multipart/form-data" class="form--post">
+    <form action="/profile/edit" method="post" enctype="multipart/form-data" class="form--post">
         @csrf
         <div class="form--post__item">
             <label for="caption" class="form--post__label">Your tweet</label>
@@ -33,4 +33,6 @@
         <button class="form--post__submit">Submit New Post</button>
     </form>
 </div>
+
+    
 @endsection

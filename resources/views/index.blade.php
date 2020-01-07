@@ -8,9 +8,9 @@
 <div class="home">
     @auth
     <div class="user">
-        <a class="user__section" href="">
-            <div class="user__img img-box"><img src="{{ asset('img/default.png') }}" alt="Default img"></div>
-            {{ Auth::user()->username }}
+        <a class="user__section" href="/profile">
+            <div class="user__img img-box"><img src="{{ $user->profile->profileImage() }}" alt="Default img"></div>
+            Profile {{-- {{ Auth::user()->username }} --}}
         </a>
         <a class="user__section" href="{{ route('logout') }}" onclick="logout()">
             <div class="user__img"></div>
@@ -19,9 +19,14 @@
     </div>
     @endauth
     <div class="posts">
-        @foreach ($user->posts as $post)
+        @foreach ($posts as $post)
         <div class="post">
-            <div></div>
+            <div class="post__user">
+                <div class="user__img"></div>
+                <h2 class="user__name"></h2>
+            </div>
+            <div class="post__contents"></div>
+            {{ $post->caption }}
         </div>
         @endforeach
     </div>
