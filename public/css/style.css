@@ -48,9 +48,66 @@ table {
 	border-spacing: 0;
 }
 
+
+/* -- Fonts -- */
+
+@font-face {
+	src: url('/fonts/pt-sans.ttf');
+	font-family: 'pt-regular';
+	font-weight: 500;
+}
+
+.regular {
+	font-family: 'pt-regular';
+}
+
+@font-face {
+	src: url('/fonts/pt-sans-bold.ttf');
+	font-family: 'pt-bold';
+	font-weight: 500;
+}
+
+.bold {
+	font-family: 'pt-bold';
+}
+
 /* -- Modifiers -- */
 
+/* Displays */
+
+.flex {
+	display: flex;
+}
+
+.flex.row {
+	flex-direction: row;
+}
+
+.flex.column {
+	flex-direction: column;
+}
+
+.flex.center {
+	justify-content: center;
+}
+
+.flex.align {
+	align-items: center;
+}
+
+.flex.align.bottom {
+	align-items: flex-end;
+}
+
+.flex.align.top {
+	align-items: flex-start;
+}
+
 /* buttons */
+
+button {
+	cursor: pointer;
+}
 
 .button--active {
 	cursor: pointer;
@@ -110,10 +167,16 @@ table {
 	color: #fff;
 }
 
-/* Global css */
+/* -- Global css -- */
 
-button {
-    cursor: pointer;
+* {
+	font-size: 16px;
+	box-sizing: border-box;
+}
+
+html, body {
+	height: 100%;
+	width: 100%;
 }
 
 /* Img container */
@@ -132,4 +195,43 @@ button {
     right: 0;
     width: 100%;
     height: auto;
+}
+
+.avatar {
+	width: 50px;
+	height: 50px;
+	overflow: hidden;
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-ms-border-radius: 50%;
+	-o-border-radius: 50%;
+}
+
+.avatar img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+/* -- Main css -- */
+
+.posts {
+	width: 100%;
+	margin: 10px;
+    max-width: 600px;
+}
+
+.post {
+    border: solid .5px rgba(0, 0, 0, .05);
+	padding: 10px 20px;
+	margin: 10px 0;
+}
+
+.post__name {
+	font-size: 1.1em;
+	margin: 0;
+	padding: 0;
+	margin-left: 10px;
+	color: rgba(0, 0, 0, .7);
 }

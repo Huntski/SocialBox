@@ -9,7 +9,7 @@
     @auth
     <div class="user">
         <a class="user__section" href="/profile">
-            <div class="user__img img-box"><img src="{{ $user->profile->profileImage() }}" alt="Default img"></div>
+            <div class="user__img avatar"><img src="{{ $user->profile->profileImage() }}" alt="Default img"></div>
             Profile {{-- {{ Auth::user()->username }} --}}
         </a>
         <a class="user__section" href="{{ route('logout') }}" onclick="logout()">

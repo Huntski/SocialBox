@@ -9,8 +9,8 @@
     <form action="/p" method="post" enctype="multipart/form-data" class="form--post">
         @csrf
         <div class="form--post__item">
-            <label for="caption" class="form--post__label">Your tweet</label>
-            <input id="caption" type="text" class="form--post__input @error('caption') is-invalid @enderror" name="caption" value="{{ old('caption') }}" required autocomplete="caption" autofocus>
+            <label for="title" class="form--post__label">Caption</label>
+            <input id="title" type="text" class="form--post__input @error('title') is-invalid @enderror" name="title" value="{{ old('title') }}" required autocomplete="title" autofocus>
 
             <div class="form--post__error">
                 @error('caption')
@@ -20,7 +20,7 @@
         </div>
 
         <div class="form--post__item">
-            <label for="image" class="form--post__label">Post Image</label>
+            <label for="image" class="form--post__label">add image</label>
             <input type="file" name="image" id="image" class="form--post__file">
 
             <div class="form--post__error">
