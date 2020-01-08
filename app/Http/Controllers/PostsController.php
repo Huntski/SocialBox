@@ -20,11 +20,14 @@ class PostsController extends Controller
     public function store()
     {
         $data = request()->validate([
-            'caption' => ['required', 'string', 'max:30'],
+            'caption' => ['required', 'string', 'max:250'],
             'image' => ['image'],
         ]);
 
-        $imgPath = request('image')->store('uploads', 'public');
+        if (request('image'))
+            $imgPath = request('image')->store('uploads', 'public');
+        else
+            $imgPath = '';
 
         auth()->user()->posts()->create([
             'caption' => $data['caption'],

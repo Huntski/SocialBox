@@ -10,7 +10,10 @@ class Post extends Model
 
     public function image()
     {
-        return "/storage/{$this->image}";
+        if ($this->image)
+            return "/storage/{$this->image}";
+        else
+            return null;
     }
 
     public function user()

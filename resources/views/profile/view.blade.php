@@ -24,12 +24,15 @@
                     <div class="avatar"><img src="{{ $user->profile->image() }}" alt="{{ $user->profile->image() }}"></div>
                     <h2 class="post__name bold">{{ $user->username }}</h2>
                 </div>
-                <p>{{ $post->caption }}</p>
+                <p class="post__caption">{{ $post->caption }}</p>
                 @if($post->image)
                     <div class="img-box"><img src="{{ $post->image() }}" alt="{{ $post->caption }}"></div>
                 @endif
             </div>
         @endforeach
+        <?php
+        header('location: ./create')
+        ?>
     </div>
 </div>
 @endsection

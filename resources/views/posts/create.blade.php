@@ -1,16 +1,12 @@
 @extends('layouts.app')
 
-@section('styles')
-<link rel="stylesheet" href="{{ asset('css/create.css') }}">
-@endsection
-
 @section('content')
 <div class="container">
     <form action="/p" method="post" enctype="multipart/form-data" class="form--post">
         @csrf
         <div class="form--post__item">
-            <label for="title" class="form--post__label">Caption</label>
-            <input id="title" type="text" class="form--post__input @error('title') is-invalid @enderror" name="title" value="{{ old('title') }}" required autocomplete="title" autofocus>
+            <label for="caption" class="form--post__label">Caption</label>
+            <input id="caption" type="text" class="form--post__input @error('caption') is-invalid @enderror" name="caption" value="{{ old('caption') }}" required autocomplete="captiont" autofocus>
 
             <div class="form--post__error">
                 @error('caption')

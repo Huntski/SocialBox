@@ -17,17 +17,26 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
-        $posts = \App\Post::all();
-        $valid_posts = [];
-        foreach ($posts as $post) {
-            $post__user = \App\User::find($post->user_id);
-            if ($post__user) {
-                $public_post = (object) [
-                    'user' => $post__user,
-                    'post' => $post,
+        $posts = [];
+        foreach (\App\Post::orderBy('created_by', 'DESC')->get() as $post) {
+            $u = \App\User::find($post->user_id);
+            if ($u) {
+                $p = (object) [
+                    'username' => $u->username,
+                    'avatar' => $u->profile->image(),
+                    'image' => $post->image(),
+                    'caption' => $post->caption,
+                    'description' => $post->description,
+                    'date' => $post->created_at->format('M j Y'),
                 ];
+                array_push($posts, $p);
             }
         }
 

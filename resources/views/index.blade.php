@@ -6,10 +6,9 @@
 
 @section('content')
 <div class="home">
-    @auth
     <div class="user">
         <a class="user__section" href="/profile">
-            <div class="user__img avatar"><img src="{{ $user->profile->profileImage() }}" alt="Default img"></div>
+            <div class="user__img avatar"><img src="{{ $user->profile->image() }}" alt="Default img"></div>
             Profile {{-- {{ Auth::user()->username }} --}}
         </a>
         <a class="user__section" href="{{ route('logout') }}" onclick="logout()">
@@ -17,16 +16,20 @@
             Logout
         </a>
     </div>
-    @endauth
+
     <div class="posts">
         @foreach ($posts as $post)
         <div class="post">
-            <div class="post__user">
-                <div class="user__img"></div>
-                <h2 class="user__name"></h2>
+            <div class="post__user flex align">
+                <a href="/profile/"></a>
+                <div class="avatar"><img src="{{ $post->avatar }}" alt="{{ $post->avatar }}"></div>
+                <h4 class="post__name bold">{{ $post->username }}</h4>
+                <h4 class="post__date regular">{{ $post->date }}</h4>
             </div>
-            <div class="post__contents"></div>
-            {{ $post->caption }}
+            <p class="post__caption">{{ $post->caption }}</p>
+            @if($post->image)
+                <div class="post__image"><img src="{{ $post->image }}" alt="{{ explode('uploads/', $post->image)[0] }}"></div>
+            @endif
         </div>
         @endforeach
     </div>
