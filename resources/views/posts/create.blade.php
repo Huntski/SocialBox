@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <form action="/p" method="post" enctype="multipart/form-data" class="form--post">
+    <form action="/post" method="post" enctype="multipart/form-data" class="form--post">
         @csrf
         <div class="form--post__item">
             <label for="caption" class="form--post__label">Caption</label>

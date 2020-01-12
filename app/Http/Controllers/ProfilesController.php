@@ -4,34 +4,30 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
-use File;
+use Illuminate\Http\File;
 
 class ProfilesController extends Controller
 {
-    public function index()
+    public function index($user = null)
     {
-        $user = auth()->user();
+        if ($user == null) {
+            $user = auth()->user();
 
-        return view('profile.view', [
+            $inputs = [
+                'title' => 'text',
+                'description' => 'text',
+                'image' => 'file',
+                'banner' => 'file',
+                'url' => 'text'
+            ];
+        } else {
+            $inputs;
+            $user = User::findOrFail($user);
+        }
+
+        return view('user.profile', [
             'user' => $user,
-        ]);
-    }
-
-    public function inspect($user)
-    {
-        $user = User::findOrFail($user);
-
-        return view('profile.view', [
-            'user' => $user,
-        ]);
-    }
-
-    public function edit()
-    {
-        $user = auth()->user();
-
-        return view('profile.edit', [
-        'user' => $user,
+            'inputs' => $inputs,
         ]);
     }
 
@@ -43,6 +39,7 @@ class ProfilesController extends Controller
             'title' => ['nullable', 'string', 'max:50'],
             'description' => ['nullable', 'string', 'max:250'],
             'image' => ['nullable', 'image'],
+            'banner' => ['nullable', 'image'],
             'url' => ['nullable', 'string', 'max:100'],
         ]);
 
@@ -51,11 +48,20 @@ class ProfilesController extends Controller
         $profile->url = $data['url']; // Update profiles url
 
         if (request('image')) {
-            $image_path = public_path("storage/{$profile->image}");
+            $img_path = public_path("storage/{$profile->image}");
+            if(File::exists($img_path)) { // Check if profile already has a image
+                File::delete($img_path); // If it does remove old image
+            }
+            $img_path = request('image')->store('uploads', 'public'); // Upload new image to public folder
+            $profile->image = $img_path; // Update profile image
+        }
+
+        if (request('banner')) {
+            $image_path = public_path("storage/{$profile->banner}");
             if(File::exists($image_path)) { // Check if profile already has a image
                 File::delete($image_path); // If it does remove old image
             }
-            $imgPath = request('image')->store('uploads', 'public'); // Upload new image to public folder
+            $imgPath = request('image')->store('banners', 'public'); // Upload new image to public folder
             $profile->image = $imgPath; // Update profile image
         }
 

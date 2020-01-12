@@ -6,22 +6,6 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     public function index()
     {
         $posts = [];
@@ -41,6 +25,7 @@ class HomeController extends Controller
         }
 
         $user = auth()->user();
+        if (!$user->profile) abort(404, 'user profile not found');
 
         return view('index',[
             'user' => $user,

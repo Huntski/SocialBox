@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'username', 'password',
+        'email', 'username', 'password',
     ];
 
     /**
@@ -42,9 +42,7 @@ class User extends Authenticatable
         parent::boot();
 
         static::created(function ($user) {
-            $user->profile()->create([
-                'title' => $user->username,
-            ]);
+            $user->profile()->create();
         });
     }
 
