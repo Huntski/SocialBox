@@ -24,4 +24,4 @@ SocialBox is myrecreation of twitter to practise with laravel.
 | Admin | automatically filter bad words | I can moderate the site
 
 ## Notes
-*Check notes__laravel.txt file for current notes*
+*Check notes__laravel.txt file for my laravel notations*
