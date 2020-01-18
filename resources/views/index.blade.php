@@ -1,14 +1,33 @@
 @extends('layouts.app')
 
+@section('content__header')
+    <h1 class="content__title">Home</h1>
+@endsection
+
+@section('scripts')
+    <script type="text/javascript">
+
+    const post_input = document.querySelector('form-post__input')
+    const post_submit = document.querySelector('form-post__submit')
+
+    post_input.addEventListener('input',  _ => {
+        if (post_input.value !== '') {
+            post_submit.classList.add('')
+        }
+    })
+
+    </script>
+@endsection
+
 @section('content')
     <form action="/post" method="post" enctype="multipart/form-data" class="form-post">
         @csrf
         <div class="form-post__input-box flex align">
-            <div class="form-post__avatar avatar"><img src="{{ $user->profile->image() }}" alt="avatar"></div>
-            <input id="caption" type="text" class="form-post__input regular" name="caption" placeholder="What's happening?">
+            <div class="form-post__avatar avatar"><img src="{{ $user->profile->avatar() }}" alt="avatar"></div>
+            <textarea id="caption" type="text" class="form-post__input" name="caption" placeholder="What's happening?" minlength="1" required></textarea>
             {{-- <div class="form-post__error">
                 @error('caption')
-                    <strong>{{ $message }}</strong>s
+                    <strong>{{ $message }}</strong>
                 @enderror
             </div> --}}
         </div>
@@ -23,7 +42,7 @@
             </div>
         </div>
 
-        <button class="form-post__submit">Post</button>
+        <button class="form-post__submit button--submit">Post</button>
     </form>
     @foreach ($posts as $post)
         <div class="post">

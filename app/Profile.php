@@ -8,15 +8,15 @@ class Profile extends Model
 {
     protected $guarded = [];
 
-    public function image()
+    public function avatar()
     {
-        $path = ($this->image) ? '/storage/' . $this->image : '/storage/uploads/default.png';
+        $path = ($this->avatar) ? '/storage/' . $this->avatar : '/storage/uploads/default.png';
         return $path;
     }
 
     public function banner()
     {
-        $path = ($this->image) ? '/storage/' . $this->image : '';
+        $path = ($this->banner) ? '/storage/' . $this->banner : '';
         return $path;
     }
 
@@ -24,4 +24,18 @@ class Profile extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function follows()
+    {
+        
+    }
+
+    /**
+     * Users have mulitible comments
+     * @return void
+     */
+     public function comments()
+     {
+         return $this->hasMany(Comment::class)->orderBy('created_at', 'DESC');
+     }
 }

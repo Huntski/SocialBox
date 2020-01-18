@@ -31,6 +31,8 @@
 //     el: '#app',
 // });
 
+// ------------------------------------------------------------------------
+
 function _modal (e_id) { // Class name of element requested to show
     let e = document.getElementById(e_id)
     if (e.style.display = 'none') {
@@ -38,4 +40,19 @@ function _modal (e_id) { // Class name of element requested to show
         return
     }
     e.style.display = 'none'
+}
+
+// ------------------------------------------------------------------------
+
+const style_inputs = document.querySelectorAll('.input__input--style')
+
+style_inputs.forEach(input => {
+    input.addEventListener('blur', _ => checkValue(input))
+    checkValue(input)
+})
+
+function checkValue (input) {
+    input.value !== '' ?
+        input.classList.add('input--active') :
+        input.classList.remove('input--active')
 }

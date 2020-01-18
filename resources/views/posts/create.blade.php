@@ -26,7 +26,7 @@
             </div>
         </div>
 
-        <button class="form--post__submit">Submit New Post</button>
+        <button class="form-post__submit">Submit New Post</button>
     </form>
 </div>
 @endsection

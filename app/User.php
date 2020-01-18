@@ -46,14 +46,22 @@ class User extends Authenticatable
         });
     }
 
-
-    public function posts()
-    {
-        return $this->hasMany(Post::class)->orderBy('created_at', 'DESC');
-    }
+    /**
+     * Makes sure User has a profile
+     * @return void
+     */
 
     public function profile()
     {
         return $this->hasOne(Profile::class);
+    }
+
+    /**
+     * Users have mulitible posts
+     * @return void
+     */
+    public function posts()
+    {
+        return $this->hasMany(Post::class)->orderBy('created_at', 'DESC');
     }
 }

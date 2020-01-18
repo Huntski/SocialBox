@@ -14,6 +14,10 @@ class PostsController extends Controller
         ]);
     }
 
+    /**
+     * @return void
+     */
+
     public function store()
     {
         $data = request()->validate([

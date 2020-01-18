@@ -1,0 +1,45 @@
+body {
+    /* background: linear-gradient(159deg, #fff 0%, #fff 50%, #e73f3f 50%, #e73f3f 100%) !important; */
+    /* background-size: 190% 100%; */
+}
+
+main {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    max-width: 1200px;
+}
+
+.logo {
+    width: 130px;
+}
+
+.logo--mobile {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    width: 50px;
+}
+
+.vink {
+    display: none;
+}
+
+#remember:checked ~ label .vink {
+    display: block;
+}
+
+@media screen and (max-width: 900px) {
+    main {
+        flex-direction: column;
+    }
+
+    .logo--desktop {
+        display: none;
+    }
+
+    .logo--mobile {
+        display: block;
+    }
+}

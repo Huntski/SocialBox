@@ -120,6 +120,7 @@
 // const app = new Vue({
 //     el: '#app',
 // });
+// ------------------------------------------------------------------------
 function _modal(e_id) {
   // Class name of element requested to show
   var e = document.getElementById(e_id);
@@ -130,6 +131,19 @@ function _modal(e_id) {
   }
 
   e.style.display = 'none';
+} // ------------------------------------------------------------------------
+
+
+var style_inputs = document.querySelectorAll('.input__input--style');
+style_inputs.forEach(function (input) {
+  input.addEventListener('blur', function (_) {
+    return checkValue(input);
+  });
+  checkValue(input);
+});
+
+function checkValue(input) {
+  input.value !== '' ? input.classList.add('input--active') : input.classList.remove('input--active');
 }
 
 /***/ }),
