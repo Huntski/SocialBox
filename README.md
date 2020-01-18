@@ -1,10 +1,10 @@
-### HelpBox
-##### School project to proof I am working with ### SocialBox
-##### My recreation of twitter to practise laravel.
+# SocialBox
+School project to proof I am working with laravel
 
-*Check notes__laravel.txt file for current notes*
+## Description
+SocialBox is myrecreation of twitter to practise with laravel.
 
-#### User Stories
+## User Stories
 
 | As a | I want (to) | So that |
 | ------- | ---------------- | ---------------- |
@@ -22,3 +22,6 @@
 | User | get a message when someone follows me | I am notified that someone followed me |
 | Admin | the ability to ban accounts | I can moderate the site
 | Admin | automatically filter bad words | I can moderate the site
+
+## Notes
+*Check notes__laravel.txt file for current notes*
