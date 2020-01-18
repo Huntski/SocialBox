@@ -14,7 +14,7 @@ class HomeController extends Controller
             if ($u) {
                 $p = (object) [
                     'username' => $u->username,
-                    'avatar' => $u->profile->image(),
+                    'avatar' => $u->profile->avatar(),
                     'image' => $post->image(),
                     'caption' => $post->caption,
                     'description' => $post->description,

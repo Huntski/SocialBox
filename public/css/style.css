@@ -657,6 +657,7 @@ a {
 	height: 100px;
 	overflow: hidden;
 	z-index: -1;
+	background: #0e9aa7;
 }
 
 .profile__banner img {
@@ -684,6 +685,13 @@ a {
 }
 
 /* Posts > post */
+
+.post__none {
+	margin-left: 60px;
+	margin-top: 20px;
+	font-size: 1.2em;
+	color: #3d3d3d;
+}
 
 .post {
 	position: relative;

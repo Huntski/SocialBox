@@ -7,13 +7,6 @@ use \App\Post;
 
 class PostsController extends Controller
 {
-    public function create()
-    {
-        return view('posts.create', [
-            'user' => auth()->user(),
-        ]);
-    }
-
     /**
      * @return void
      */

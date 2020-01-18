@@ -21,21 +21,13 @@ class Post extends Model
         return null;
     }
 
-    /**
-    * Every Post belongs to a User
-    * @return void
-    */
-    public function profile()
+    public function user()
     {
-        return $this->belongsTo(Profile::class);
+        return $this->belongsTo(User::class);
     }
 
-    /**
-     * Users have mulitible comments
-     * @return void
-     */
-     public function comments()
-     {
-         return $this->hasMany(Comment::class)->orderBy('created_at', 'DESC');
-     }
+    public function comments()
+    {
+        return $this->hasMany(Comment::class)->orderBy('created_at', 'DESC');
+    }
 }

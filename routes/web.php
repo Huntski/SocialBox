@@ -8,19 +8,25 @@ Route::group(['middleware' => ['web', 'auth']], function() {
 
     /* --- GET Reqeusts --- */
 
+    // Home
     Route::get('/', 'HomeController@index')->name('index');
 
-    Route::get('/p', 'PostsController@create')->name('posts.create');
-    Route::get('/p/{id}', 'PostsController@show')->name('posts.view');
+    // Posts
+    Route::get('/post/{id}', 'PostsController@show')->name('posts.view');
 
+    // Profile
     Route::get('/profile', 'ProfilesController@index')->name('profile.index');
     Route::get('/profile/{user}', 'ProfilesController@inspect')->name('profile.inspect');
 
     /* --- POST requests --- */
 
-    Route::post('/post', 'PostsController@store')->name('profile.store');
+    // Posts
+    Route::post('/post', 'PostsController@store')->name('posts.store');
+
+    // Profile
     Route::post('/profile/edit', 'ProfilesController@modify')->name('profile.edit');
 
+    // Comments
     Route::post('/comment', 'CommentsController@store')->name('comment.store');
     Route::post('/comment/delete', 'CommentsController@delete')->name('comment.delete');
 });

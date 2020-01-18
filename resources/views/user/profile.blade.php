@@ -5,7 +5,7 @@
 @endsection
 
 @section('content__header')
-    <h1 class="content__title">{{ $user->username ?? ''}}</h1>
+    <h1 class="content__title">Profile</h1>
 @endsection
 
 @section('content')
@@ -16,7 +16,7 @@
             <h1 class="profile__name bold">{{ $user->username }}</h1>
             <h2 class="profile__title">{{ $user->profile->title }}</h2>
             <p class="profile__description">{{ $user->profile->description }}</p>
-            @if($user->user_id == auth()->user()->user_id)
+            @if($user->id == auth()->user()->id)
                 <button class="profile__edit button--border--round" onclick="_modal('edit-form')">Edit profile</button>
             @else
                 <button class="profile__follow button--border--round">Follow</button>
@@ -25,23 +25,27 @@
     </div>
 
     <div class="posts"></div>
-        @foreach ( $user->posts as $post)
-            <div class="post">
-                <div class="post__user flex align">
-                    <div class="avatar"><img src="{{ $user->profile->avatar() }}" alt="{{ $user->profile->avatar() }}"></div>
-                    <span class="post__name bold">{{ $user->username }}</span>
+        @if ($user->posts->count())
+            @foreach ( $user->posts as $post)
+                <div class="post">
+                    <div class="post__user flex align">
+                        <div class="avatar"><img src="{{ $user->profile->avatar() }}" alt="{{ $user->profile->avatar() }}"></div>
+                        <span class="post__name bold">{{ $user->username }}</span>
+                    </div>
+                    <p class="post__caption">{{ $post->caption }}</p>
+                    @if($post->image)
+                        <div class="post__image"><img src="{{ $post->avatar() }}" alt="{{ $post->caption }}"></div>
+                    @endif
                 </div>
-                <p class="post__caption">{{ $post->caption }}</p>
-                @if($post->image)
-                    <div class="post__image"><img src="{{ $post->avatar() }}" alt="{{ $post->caption }}"></div>
-                @endif
-            </div>
-        @endforeach
+            @endforeach
+        @else
+            <h1 class="post__none">This user has no posts.</h1>
+        @endif
     </div>
 @endsection
 
 @section('modals')
-    @if($user->user_id == auth()->user()->user_id)
+    @if($user->id == auth()->user()->id)
     <div class="modal" id="edit-form">
         <div class="modal__filter" onclick="_modal('edit-form')"></div>
 

@@ -27,7 +27,12 @@ class Profile extends Model
 
     public function follows()
     {
-        
+        // return $this->
+    }
+
+    public function posts()
+    {
+        return $this->hasMany(Post::class)->orderBy('created_at', 'DESC');
     }
 
     /**

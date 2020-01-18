@@ -46,22 +46,15 @@ class User extends Authenticatable
         });
     }
 
-    /**
-     * Makes sure User has a profile
-     * @return void
-     */
-
+    // User has one Profile
     public function profile()
     {
         return $this->hasOne(Profile::class);
     }
 
-    /**
-     * Users have mulitible posts
-     * @return void
-     */
+    // User has many Posts
     public function posts()
     {
-        return $this->hasMany(Post::class)->orderBy('created_at', 'DESC');
+        return $this->hasMany(Post::class);
     }
 }
