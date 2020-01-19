@@ -33,11 +33,7 @@ PT Sans
 sans-serif
 
 ## Colors
-<span style="color:#4a4e4d">#4a4e4d</span>
-<span style="color:#0e9aa7">#0e9aa7</span>
-<span style="color:#3da4ab">#3da4ab</span>
-<span style="color:#f6cd61">#f6cd61</span>
-<span style="color:#fe8a71">#fe8a71</span>
+
 - ![#f03c15](https://placehold.it/15/4a4e4d/000000?text=+) `#4a4e4d`
 - ![#f03c15](https://placehold.it/15/0e9aa7/000000?text=+) `#0e9aa7`
 - ![#f03c15](https://placehold.it/15/3da4ab/000000?text=+) `#3da4ab`
