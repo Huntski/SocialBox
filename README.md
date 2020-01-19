@@ -33,11 +33,11 @@ PT Sans
 sans-serif
 
 ## Colors
-#4a4e4d
-#0e9aa7
-#3da4ab
-#f6cd61
-#fe8a71
+<span style="color:#4a4e4d">#4a4e4d</span>
+<span style="color:#0e9aa7">#0e9aa7</span>
+<span style="color:#3da4ab">#3da4ab</span>
+<span style="color:#f6cd61">#f6cd61</span>
+<span style="color:#fe8a71">#fe8a71</span>
 
 ## Notes
 *Check notes__laravel.txt file for my laravel notations*
