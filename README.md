@@ -6,24 +6,27 @@ SocialBox is myrecreation of twitter to practise with laravel.
 
 ## User Stories
 
-| As a | I want (to) | So that |
-| ------- | ---------------- | ---------------- |
-| Guest | be welcomed with information | I understand what SocialBox is about |
-| Guest | register | I can have a account |
-| Guest | login | I can view the site |
-| Guest | logout | I am not logged in |
-| User | view recent posts | see what others postsed |
-| User | edit my banner | personlize my account |
-| User | post my thougths | Others can see them. |
-| User | edit my avatar | personlize my account |
-| User | edit my description | personlize my account |
-| User | edit my banner | personlize my account |
-| User | comment on a post | I can react to a post |
-| User | delete button on a post | I can delete my own posts |
-| User | get a message when someone comments on my post | I am notified when someone commented |
-| User | get a message when someone follows me | I am notified that someone followed me |
-| Admin | the ability to ban accounts | I can moderate the site
-| Admin | automatically filter bad words | I can moderate the site
+| As a | I want (to) | So that | Done |
+| ------- | ---------------- | ---------------- | ---------------- |
+| Guest | be welcomed with information | I understand what SocialBox is about | X |
+| Guest | register | I can have a account | X |
+| Guest | login | I can view the site | X |
+| User | logout | I am not logged in | X |
+| User | view recent posts | see what others postsed | X |
+| User | edit my banner | personlize my account | X |
+| User | post a comment public | Others can see them. |  |
+| User | a way to go to my profile | view my profile | X |
+| User | others to be able to go to my profile | others can view my profile | X |
+| User | add images to my post | I can have images with my posts |  |
+| User | edit my avatar | personlize my account | X |
+| User | edit my description | personlize my account |  |
+| User | edit my banner | personlize my account |  |
+| User | comment on a post | I can react to a post |  |
+| User | delete button on a post | I can delete my own posts |  |
+| User | get a message when someone comments on my post | I am notified when someone commented |  |
+| User | get a message when someone follows me | I am notified that someone followed me |  |
+| Admin | the ability to ban accounts | I can moderate the site |  |
+| Admin | automatically filter bad words | I can moderate the site |  |
 
 ## Fonts
 
