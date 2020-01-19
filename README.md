@@ -38,6 +38,11 @@ sans-serif
 <span style="color:#3da4ab">#3da4ab</span>
 <span style="color:#f6cd61">#f6cd61</span>
 <span style="color:#fe8a71">#fe8a71</span>
+- ![#f03c15](https://placehold.it/15/4a4e4d/000000?text=+) `#4a4e4d`
+- ![#f03c15](https://placehold.it/15/0e9aa7/000000?text=+) `#0e9aa7`
+- ![#f03c15](https://placehold.it/15/3da4ab/000000?text=+) `#3da4ab`
+- ![#f03c15](https://placehold.it/15/f6cd61/000000?text=+) `#f03c15`
+- ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `#fe8a71`
 
 ## Notes
 *Check notes__laravel.txt file for my laravel notations*
