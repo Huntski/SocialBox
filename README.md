@@ -8,6 +8,7 @@ SocialBox is myrecreation of twitter to practise with laravel.
 
 | As a | I want (to) | So that |
 | ------- | ---------------- | ---------------- |
+| Guest | be welcomed with information | I understand what SocialBox is about |
 | Guest | register | I can have a account |
 | Guest | login | I can view the site |
 | Guest | logout | I am not logged in |
