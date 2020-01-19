@@ -23,5 +23,20 @@ SocialBox is myrecreation of twitter to practise with laravel.
 | Admin | the ability to ban accounts | I can moderate the site
 | Admin | automatically filter bad words | I can moderate the site
 
+## Fonts
+
+PT Sans
+    - Regular
+    - Bold
+
+sans-serif
+
+## Colors
+#4a4e4d
+#0e9aa7
+#3da4ab
+#f6cd61
+#fe8a71
+
 ## Notes
 *Check notes__laravel.txt file for my laravel notations*

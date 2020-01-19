@@ -1,6 +1,40 @@
+/* ==== Imports ==== */
+
+@font-face {
+	src: url('/fonts/pt-sans.ttf');
+	font-family: 'regular';
+	font-weight: 500;
+}
+
+@font-face {
+	src: url('/fonts/pt-sans-bold.ttf');
+	font-family: 'bold';
+	font-weight: 500;
+}
+
+.regular {
+	font-family: 'regular';
+}
+
+.bold {
+	font-family: 'bold';
+}
+
+/* ==== Main css ==== */
+
+* {
+    font-family: 'pt-regular', sans-serif;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
 body {
-    /* background: linear-gradient(159deg, #fff 0%, #fff 50%, #e73f3f 50%, #e73f3f 100%) !important; */
-    /* background-size: 190% 100%; */
+    background: linear-gradient(159deg, #fff 0%, #fff 50%, #e73f3f 50%, #e73f3f 100%) !important;
+    background-size: 190% 100%;
 }
 
 main {
@@ -8,6 +42,10 @@ main {
     justify-content: center !important;
     align-items: center !important;
     max-width: 1200px;
+}
+
+h1 {
+    font-family: 'bold';
 }
 
 .logo {

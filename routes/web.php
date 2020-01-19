@@ -1,5 +1,7 @@
 <?php
 
+Auth::routes();
+
 Route::group(['middleware' => ['web', 'auth']], function() {
     /* - Redirects - */
     Route::get('/home', function(){
@@ -31,7 +33,17 @@ Route::group(['middleware' => ['web', 'auth']], function() {
     Route::post('/comment/delete', 'CommentsController@delete')->name('comment.delete');
 });
 
-Auth::routes();
+Route::group(['middleware' => 'guest'], function() {
+
+    Route::get('/', function(){
+        return redirect()->route('welcome');
+    });
+
+    Route::get('/welcome', function(){
+        return view('welcome');
+    })->name('welcome');
+});
+
 
 
 
