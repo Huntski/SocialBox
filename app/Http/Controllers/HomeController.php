@@ -6,14 +6,14 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function index()
+    public function show()
     {
         $posts = [];
-        foreach (\App\Post::orderBy('created_by', 'DESC')->get() as $post) {
+        foreach (\App\Post::all() as $post) {
             $u = \App\User::find($post->user_id);
             if ($u) {
                 $p = (object) [
-                    'username' => $u->username,
+                'username' => $u->username,
                     'avatar' => $u->profile->avatar(),
                     'image' => $post->image(),
                     'caption' => $post->caption,
@@ -24,10 +24,12 @@ class HomeController extends Controller
             }
         }
 
+        krsort($posts);
+
         $user = auth()->user();
         if (!$user->profile) abort(404, 'user profile not found');
 
-        return view('index',[
+        return view('home',[
             'user' => $user,
             'posts' => $posts,
         ]);

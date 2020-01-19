@@ -7,13 +7,17 @@
 @section('scripts')
     <script type="text/javascript">
 
-    const post_input = document.querySelector('form-post__input')
-    const post_submit = document.querySelector('form-post__submit')
+    const post_input = document.querySelector('.form-post__input')
+    const post_submit = document.querySelector('.form-post__submit')
 
     post_input.addEventListener('input',  _ => {
-        if (post_input.value !== '') {
-            post_submit.classList.add('')
+        console.log(post_input.value)
+        if (post_input.value != '' || post_input.value == '<empty string>') {
+            post_submit.classList.add('input--active')
+            console.log('active')
+            return
         }
+        post_submit.classList.remove('input--active')
     })
 
     </script>

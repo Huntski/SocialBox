@@ -16,9 +16,10 @@ $inputs = [
 ];
 
 @endphp
+
 <form method="POST" action="{{ route('login') }}" class="form-guest">
     @csrf
-    <h1 class="form-guest__title">Welcome back to SocialBox</h1>
+    <h1 class="form-guest__title">Login to <span class="bold">SocialBox</span></h1>
     <h2 class="form-guest__desc">Please login or create an account.</h2>
     <img class="logo logo--mobile" src="{{ asset('img/logo.png') }}" alt="logo">
     @foreach ($inputs as $name => $type)
@@ -48,9 +49,8 @@ $inputs = [
     </div>
 
     <p class="form-guest__extra">Don't have an account? <a href="{{ route('register') }}">Sign up here</a></p>
-    <button type="submit" class="button--active">login</button>
+    <button type="submit" class="form-guest__submit button--submit">login</button>
 </form>
 
 <img class="logo logo--desktop" src="{{ asset('img/logo.png') }}" alt="logo">
-
 @endsection

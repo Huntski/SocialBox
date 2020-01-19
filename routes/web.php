@@ -5,20 +5,20 @@ Auth::routes();
 Route::group(['middleware' => ['web', 'auth']], function() {
     /* - Redirects - */
     Route::get('/home', function(){
-        return redirect()->route('index');
+        return redirect()->route('home');
     });
 
     /* --- GET Reqeusts --- */
 
     // Home
-    Route::get('/', 'HomeController@index')->name('index');
+    Route::get('/home', 'HomeController@show')->name('home');
 
     // Posts
     Route::get('/post/{id}', 'PostsController@show')->name('posts.view');
 
     // Profile
-    Route::get('/profile', 'ProfilesController@index')->name('profile.index');
-    Route::get('/profile/{user}', 'ProfilesController@inspect')->name('profile.inspect');
+    Route::get('/profile', 'ProfilesController@index')->name('profile.user');
+    Route::get('/profile/{user}', 'ProfilesController@index')->name('profile.inspect');
 
     /* --- POST requests --- */
 
