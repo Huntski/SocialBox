@@ -38,7 +38,6 @@ sans-serif
 <span style="color:#3da4ab">#3da4ab</span>
 <span style="color:#f6cd61">#f6cd61</span>
 <span style="color:#fe8a71">#fe8a71</span>
-<span style="color:blue">some *This is Blue italic.* text</span>
 
 ## Notes
 *Check notes__laravel.txt file for my laravel notations*
