@@ -7,6 +7,9 @@ SocialBox is my recreation of twitter to practise with laravel.
 
 | As a | I want (to) | So that | Done |
 | ------- | ---------------- | ---------------- | ---------------- |
+| Developer | database | I can connect and save information | X |
+| Developer | have a working php 7.2+ | I can be uptodate with software | X |
+| Developer | atleast 5 routes | I can practise with routing | X |
 | Guest | be welcomed with information | I understand what SocialBox is about | X |
 | Guest | register | I can have a account | X |
 | Guest | login | I can view the site | X |
