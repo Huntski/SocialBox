@@ -13,10 +13,12 @@ class HomeController extends Controller
             $u = \App\User::find($post->user_id);
             if ($u) {
                 $p = (object) [
-                'username' => $u->username,
+                    'username' => $u->username,
                     'avatar' => $u->profile->avatar(),
                     'image' => $post->image(),
                     'caption' => $post->caption,
+                    'post_id' => $post->id,
+                    'user_id' => $post->user_id,
                     'description' => $post->description,
                     'date' => $post->created_at->format('M j Y'),
                 ];

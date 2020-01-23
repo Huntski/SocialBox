@@ -807,9 +807,25 @@ a {
 	margin-left: auto;
 }
 
+.post__delete {
+	cursor: pointer;
+	display: block;
+	width: 40px !important;
+	height: 40px !important;
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+}
+
+.post__delete div {
+	background: #525252;
+}
+
 .post__caption {
 	margin-top: 10px;
-	font-size: 1.2em;
+	font-size: 1.4em;
 }
 
 .post__image {

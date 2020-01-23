@@ -24,7 +24,7 @@
 @endsection
 
 @section('content')
-    <form action="/post" method="post" enctype="multipart/form-data" class="form-post">
+    <form action="{{ route('posts.store') }}" method="post" enctype="multipart/form-data" class="form-post">
         @csrf
         <div class="form-post__input-box flex align">
             <div class="form-post__avatar avatar"><img src="{{ $user->profile->avatar() }}" alt="avatar"></div>
@@ -55,6 +55,14 @@
                 <div class="avatar"><img src="{{ $post->avatar }}" alt="{{ $post->avatar }}"></div>
                 <h1 class="post__name bold">{{ $post->username }}</h1>
                 <span class="post__date regular">{{ $post->date }}</span>
+                @if($post->user_id == $user->id)
+                <a href="{{ route('posts.delete', ['id' => $post->post_id])}}">
+                    <label for="delete__submit" class="post__delete cross cross--delete">
+                        <div></div>
+                        <div></div>
+                    </label>
+                </a>
+                @endif
             </div>
             <p class="post__caption">{{ $post->caption }}</p>
             @if($post->image)

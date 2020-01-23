@@ -17,13 +17,16 @@ Route::group(['middleware' => ['web', 'auth']], function() {
     Route::get('/profile', 'ProfilesController@index')->name('profile.show');
     Route::get('/profile/{user}', 'ProfilesController@index')->name('profile.inspect');
 
+    // Posts
+    Route::get('/post/delete/{id}', 'PostsController@delete')->name('posts.delete');
+
     // Settings
     Route::get('/settings', 'SettingsController@index')->name('settings.show');
 
     /* --- POST requests --- */
 
     // Posts
-    Route::post('/post', 'PostsController@store')->name('posts.store');
+    Route::post('/post/store', 'PostsController@store')->name('posts.store');
 
     // Settings
     Route::post('/settings', 'SettingsController@store')->name('settings.store');

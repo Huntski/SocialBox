@@ -30,6 +30,12 @@
                         <div class="avatar"><img src="{{ $user->profile->avatar() }}" alt=""></div>
                         <span class="post__name bold">{{ $user->username }}</span>
                         <span class="post__date regular">{{ $post->date }}</span>
+                        <a href="{{ route('posts.delete', ['id' => $post->id])}}">
+                            <label for="delete__submit" class="post__delete cross cross--delete">
+                                <div></div>
+                                <div></div>
+                            </label>
+                        </a>
                     </div>
                     <p class="post__caption">{{ $post->caption }}</p>
                     @if($post->image)

@@ -29,6 +29,12 @@ class PostsController extends Controller
             'image' => $imgPath,
         ]);
 
-        return redirect('/'); // '/profile/' . auth()->user()->id
+        return redirect('/');
+    }
+
+    public function delete($id)
+    {
+        Post::findOrFail($id)->delete();
+        return redirect()->route('profile.show');
     }
 }
