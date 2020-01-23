@@ -16,10 +16,10 @@ SocialBox is my recreation of twitter to practise with laravel.
 | User | post a comment public | Others can see them. |  |
 | User | a way to go to my profile | view my profile | X |
 | User | others to be able to go to my profile | others can view my profile | X |
-| User | add images to my post | I can have images with my posts |  |
+| User | add images to my post | I can have images with my posts | X |
 | User | edit my avatar | personlize my account | X |
-| User | edit my description | personlize my account |  |
-| User | edit my banner | personlize my account |  |
+| User | edit my description | personlize my account | X |
+| User | edit my banner | personlize my account | X |
 | User | comment on a post | I can react to a post |  |
 | User | delete button on a post | I can delete my own posts |  |
 | User | get a message when someone comments on my post | I am notified when someone commented |  |
