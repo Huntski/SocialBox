@@ -21,7 +21,7 @@ SocialBox is my recreation of twitter to practise with laravel.
 | User | edit my description | personlize my account | X |
 | User | edit my banner | personlize my account | X |
 | User | comment on a post | I can react to a post |  |
-| User | delete button on a post | I can delete my own posts |  |
+| User | delete button on a post | I can delete my own posts | x |
 | User | get a message when someone comments on my post | I am notified when someone commented |  |
 | User | get a message when someone follows me | I am notified that someone followed me |  |
 | Admin | the ability to ban accounts | I can moderate the site |  |
