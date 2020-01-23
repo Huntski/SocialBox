@@ -13,20 +13,20 @@ Route::group(['middleware' => ['web', 'auth']], function() {
     // Home
     Route::get('/home', 'HomeController@show')->name('home');
 
-    // Posts
-    Route::get('/post/{id}', 'PostsController@show')->name('posts.view');
-
     // Profile
-    Route::get('/profile', 'ProfilesController@index')->name('profile.user');
+    Route::get('/profile', 'ProfilesController@index')->name('profile.show');
     Route::get('/profile/{user}', 'ProfilesController@index')->name('profile.inspect');
+
+    // Settings
+    Route::get('/settings', 'SettingsController@index')->name('settings.show');
 
     /* --- POST requests --- */
 
     // Posts
     Route::post('/post', 'PostsController@store')->name('posts.store');
 
-    // Profile
-    Route::post('/profile/edit', 'ProfilesController@modify')->name('profile.edit');
+    // Settings
+    Route::post('/settings', 'SettingsController@store')->name('settings.store');
 
     // Comments
     Route::post('/comment', 'CommentsController@store')->name('comment.store');

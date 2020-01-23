@@ -8,6 +8,7 @@ use \App\Post;
 class PostsController extends Controller
 {
     /**
+     * Stores a POSTed post.
      * @return void
      */
 

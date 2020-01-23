@@ -28,7 +28,7 @@
         @csrf
         <div class="form-post__input-box flex align">
             <div class="form-post__avatar avatar"><img src="{{ $user->profile->avatar() }}" alt="avatar"></div>
-            <textarea id="caption" type="text" class="form-post__input" name="caption" placeholder="What's happening?" minlength="1" required></textarea>
+            <textarea id="caption" type="text" class="form-post__input" name="caption" placeholder="What's happening?" minlength="1" maxlength="250" required></textarea>
             {{-- <div class="form-post__error">
                 @error('caption')
                     <strong>{{ $message }}</strong>

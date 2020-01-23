@@ -22,9 +22,13 @@
                     <div class="explore__img avatar"></div>
                     Home
                 </a>
-                <a class="explore__section flex align @if(\Request::route()->getName() == 'profile.user') explore--active @endif" href="/profile">
+                <a class="explore__section flex align @if(\Request::route()->getName() == 'profile.show') explore--active @endif" href="/profile">
                     <div class="explore__img avatar"><img src="{{ $user->profile->avatar() ?? '' }}" alt="Default img"></div>
                     Profile
+                </a>
+                <a class="explore__section flex align @if(\Request::route()->getName() == 'settings.show') explore--active @endif" href="/settings">
+                    <div class="explore__img avatar"></div>
+                    Settings
                 </a>
                 <a class="explore__section flex align" onclick="logout()">
                     <div class="explore__img"></div>
