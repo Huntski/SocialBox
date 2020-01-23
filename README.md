@@ -1,8 +1,7 @@
 # SocialBox
 School project to proof I am working with laravel
 
-## Description
-SocialBox is myrecreation of twitter to practise with laravel.
+SocialBox is my recreation of twitter to practise with laravel.
 
 ## User Stories
 
