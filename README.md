@@ -47,4 +47,5 @@ sans-serif
 - ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `#fe8a71`
 
 ## Notes
+*Bap user stories are in the user_stories.xlxs file*
 *Check notes__laravel.txt file for my laravel notations*
