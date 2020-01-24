@@ -10,20 +10,18 @@
     <form action="{{ route('settings.store') }}" method="post" enctype="multipart/form-data" class="form-settings">
         @csrf
 
-        <div class="form-settings__banner">
-            <input type="file" id="banner" name="banner" class="form-settings__banner__input">
-            <label for="banner" class="form-settings__label-camera">
-                <img src="{{ asset('img/camera.png') }}" alt="" class="form-settings__label-camera__img">
-            </label>
-            <img class="form-settings__banner__img" src="{{ $user->profile->banner() ?? '' }}" alt="">
+        <div class="form-settings__file">
+            <span class="form-settings__file__span">Avatar</span>
+            <input type="file" id="avatar" name="avatar" class="form-settings__file__input">
         </div>
 
-        <div class="form-settings__avatar">
-            <input type="file" id="avatar" name="avatar" class="form-settings__avatar__input">
-            <label for="banner" class="form-settings__label-camera">
-                <img src="{{ asset('img/camera.png') }}" alt="" class="form-settings__label-camera__img">
+        <div class="form-settings__file">
+            <span class="form-settings__file__span">Banner</span>
+            <input type="file" id="banner" name="banner" class="form-settings__file__input">
+            <label for="banner" class="form-settings__file__label">
+                <button type="button" class="form-settings">Select</button>
+                <span class=""></span>
             </label>
-            <img src="{{ $user->profile->avatar() ?? '' }}" alt="Profile avatar" class="form-settings__avatar__img">
         </div>
 
         @foreach($inputs as $name => $type)

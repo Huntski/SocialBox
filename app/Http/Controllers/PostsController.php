@@ -29,7 +29,7 @@ class PostsController extends Controller
             'image' => $imgPath,
         ]);
 
-        return redirect('/');
+        return redirect()->route('route.name');
     }
 
     public function delete($id)
